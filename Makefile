@@ -1,3 +1,4 @@
+FLAG = -Wall -Wextra -Werror
 NAME=libft.a
 SRC=ft_bzero.c \
 	ft_isalnum.c \
