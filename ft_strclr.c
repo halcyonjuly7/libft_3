@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 19:30:26 by hramirez          #+#    #+#             */
-/*   Updated: 2018/02/26 20:02:23 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:03:49 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_strclr(char *s)
 {
+	if (!s)
+		return ;
 	ft_memset((void *)s, '\0', ft_strlen(s));
 }

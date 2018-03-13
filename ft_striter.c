@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 11:43:50 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/02 14:28:36 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:05:26 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	ft_striter(char *s, void (*f)(char *))
 	int index;
 
 	index = 0;
+	if (!s || !f)
+		return ;
 	while (s[index])
 	{
 		f(&s[index]);
