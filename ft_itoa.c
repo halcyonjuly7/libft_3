@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 14:28:16 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 18:00:48 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:12:04 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_itoa(int n)
 {
 	char	*str;
+
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	str = (char *)malloc(sizeof(char) * 2);
