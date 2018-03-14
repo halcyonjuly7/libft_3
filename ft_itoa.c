@@ -6,66 +6,32 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/01 14:28:16 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/07 12:22:40 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:00:48 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_reverse(char *str, int *len)
+char	*ft_itoa(int n)
 {
-	int		start;
-	int		end;
-	char	temp;
-
-	start = 0;
-	end = *len - 1;
-	while (start < end)
-	{
-		temp = str[start];
-		str[start] = str[end];
-		str[end] = temp;
-		start++;
-		end--;
-	}
-}
-
-static void	convert(int nb, int *index, int is_negative, char *str)
-{
-	int		rem;
-	int		ind;
-
-	ind = *index;
-	while (nb != 0)
-	{
-		rem = nb % 10;
-		str[ind++] = (rem * is_negative) + '0';
-		nb = nb / 10;
-	}
-	*index = ind;
-}
-
-char		*ft_itoa(int nb)
-{
-	int		is_negative;
-	int		index;
 	char	*str;
-
-	is_negative = (nb < 0) ? -1 : 1;
-	index = 0;
-	str = malloc(sizeof(char) * nb == 0 ? 2 : 12);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	str = (char *)malloc(sizeof(char) * 2);
 	if (str == NULL)
 		return (NULL);
-	if (nb == 0)
+	if (n < 0)
 	{
-		str[index++] = '0';
-		str[index] = '\0';
-		return (str);
+		str[0] = '-';
+		str[1] = '\0';
+		str = ft_strjoin(str, ft_itoa(-n));
 	}
-	convert(nb, &index, is_negative, str);
-	if (is_negative == -1)
-		str[index++] = '-';
-	ft_reverse(str, &index);
-	str[index] = '\0';
+	else if (n >= 10)
+		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+	else if (n < 10 && n >= 0)
+	{
+		str[0] = n + '0';
+		str[1] = '\0';
+	}
 	return (str);
 }
