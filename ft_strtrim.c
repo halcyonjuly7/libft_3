@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 14:52:17 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 17:03:32 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:28:59 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,11 @@ static int	get_end(char const *s)
 	return (str_len);
 }
 
+#	define VARS int str_start,str_end, index; char *final_str
+
 char		*ft_strtrim(char const *s)
 {
-	int		str_start;
-	int		str_end;
-	int		index;
-	char	*final_str;
-
+	VARS;
 	if (!s)
 		return (NULL);
 	index = 0;
