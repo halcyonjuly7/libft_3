@@ -1,6 +1,6 @@
 FLAG = -Wall -Wextra -Werror
-NAME=libft.a
-SRC=ft_bzero.c \
+NAME = libft.a
+SRC = ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -9,6 +9,7 @@ SRC=ft_bzero.c \
 	ft_isprint.c \
 	ft_isupper.c \
 	ft_itoa.c \
+	ft_atoi.c \
 	ft_lstadd.c \
 	ft_lstdel.c \
 	ft_lstdelone.c \
@@ -70,7 +71,7 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 
 %.o: %.c
-	@gcc $(FLAG) -c $(SRC)
+	@gcc $(FLAG) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
@@ -80,4 +81,3 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
