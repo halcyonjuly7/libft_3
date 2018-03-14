@@ -6,37 +6,35 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 14:32:02 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 16:19:56 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:47:44 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		new_strlen;
-	char	*new_str;
-	int		str1_index;
-	int		str2_index;
+	int		i;
+	int		a;
+	char	*str;
 
 	if (!s1 || !s2)
 		return (NULL);
-	new_strlen = (ft_strlen(s1) + ft_strlen(s2));
-	new_str = malloc(sizeof(char) + (new_strlen + 1));
-	if (new_str == NULL)
+	i = 0;
+	a = 0;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (str == NULL)
 		return (NULL);
-	str1_index = 0;
-	while (s1[str1_index])
+	while (s1[i] != '\0')
 	{
-		new_str[str1_index] = s1[str1_index];
-		str1_index++;
+		str[i] = s1[i];
+		i++;
 	}
-	str2_index = 0;
-	while (s2[str2_index])
+	while (s2[a] != '\0')
 	{
-		new_str[str1_index + str2_index] = s2[str2_index];
-		str2_index++;
+		str[i + a] = s2[a];
+		a++;
 	}
-	new_str[str1_index + str2_index] = '\0';
-	return (new_str);
+	str[i + a] = '\0';
+	return (str);
 }
