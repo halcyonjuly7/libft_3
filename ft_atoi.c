@@ -6,9 +6,11 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/26 16:11:44 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 17:47:25 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:56:30 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int		start_index(const char *str)
 {
