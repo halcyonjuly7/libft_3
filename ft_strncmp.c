@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/23 17:29:22 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/12 13:55:31 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:18:42 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned char	*s1_copy;
 	unsigned char	*s2_copy;
-	int				index;
+	size_t			index;
 
 	index = 0;
 	s1_copy = (unsigned char *)s1;

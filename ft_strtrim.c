@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 14:52:17 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 16:28:18 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:03:32 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char		*ft_strtrim(char const *s)
 
 	if (!s)
 		return (NULL);
+	index = 0;
 	str_start = get_start(s);
 	if (str_start == -1)
 	{

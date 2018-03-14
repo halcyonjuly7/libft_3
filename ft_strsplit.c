@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 15:06:15 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 16:27:39 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:07:11 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ static char	*ft_strndup(int start, int end, char const *str)
 	return (substr);
 }
 
+# define INITIALIZE index=0,start=0,end=0,splitted_index=0
 
-
-# define INITIALIZE index=0; start=0; end=0; splitted_index=0;
 char		**ft_strsplit(char const *s, char c)
 {
 	int		start;
@@ -50,9 +49,9 @@ char		**ft_strsplit(char const *s, char c)
 	int		splitted_index;
 	char	**splitted;
 
+	INITIALIZE;
 	if (!s)
 		return (NULL);
-	INITIALIZE
 	splitted = (char **)malloc(sizeof(char *) * ft_count_words(s, c) + 1);
 	if (splitted == NULL)
 		return (NULL);

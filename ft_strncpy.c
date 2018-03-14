@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 15:48:53 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/05 13:14:15 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:18:15 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int index;
+	size_t index;
 
 	index = 0;
 	while (src[index] && index < len)

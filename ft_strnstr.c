@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:35:39 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/12 13:51:29 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:16:10 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char		*ft_strnstr(const char *h, const char *n, size_t len)
 {
-	int		hstck_ind;
-	int		needle_len;
-	int		needle_ind;
+	size_t	hstck_ind;
+	size_t	needle_len;
+	size_t	needle_ind;
 	char	*hstck_cpy;
 
 	hstck_ind = 0;

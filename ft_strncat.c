@@ -6,7 +6,7 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 18:56:22 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/05 13:18:34 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:19:23 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int index;
-	int index2;
+	size_t index;
+	size_t index2;
 
 	index = ft_strlen(s1);
 	index2 = 0;
