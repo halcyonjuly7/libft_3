@@ -6,65 +6,68 @@
 /*   By: hramirez <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/27 15:06:15 by hramirez          #+#    #+#             */
-/*   Updated: 2018/03/13 17:30:07 by hramirez         ###   ########.fr       */
+/*   Updated: 2018/03/13 18:32:32 by hramirez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *string, char sep)
+static int	ft_cntwrd(char const *s, char c)
 {
-	int		index;
-	int		sep_count;
+	unsigned int	i;
+	int				cntr;
 
-	index = 0;
-	sep_count = 0;
-	while (string[index])
+	i = 0;
+	cntr = 0;
+	while (s[i])
 	{
-		while (string[index] == sep)
-			index++;
-		if (string[index])
-			sep_count++;
-		if (string[index] != sep && string[index])
-			index++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			cntr++;
+		while (s[i] && (s[i] != c))
+			i++;
 	}
-	return (sep_count);
+	return (cntr);
 }
 
-static char	*ft_strndup(int start, int end, char const *str)
+static char	*ft_strndup(const char *s, size_t n)
 {
-	char	*substr;
+	char			*str;
 
-	substr = ft_strsub(str, start, end - start);
-	return (substr);
+	str = (char *)malloc(sizeof(char) * n + 1);
+	if (str == NULL)
+		return (NULL);
+	str = ft_strncpy(str, s, n);
+	str[n] = '\0';
+	return (str);
 }
-
-#	define INITIALIZE index=0,start=0,end=0,splitted_index=0
 
 char		**ft_strsplit(char const *s, char c)
 {
-	int		start;
-	int		end;
-	int		index;
-	int		splitted_index;
-	char	**splitted;
+	int				i;
+	int				j;
+	int				k;
+	char			**tab;
 
-	INITIALIZE;
-	if (!s)
+	i = 0;
+	k = 0;
+	if (!s || (!(tab = (char **)malloc(sizeof(char *) *
+						(ft_cntwrd(s, c)) + 1))))
 		return (NULL);
-	splitted = (char **)malloc(sizeof(char *) * ft_count_words(s, c) + 1);
-	if (splitted == NULL)
-		return (NULL);
-	while (s[index])
+	while (s[i])
 	{
-		while (s[index] == c)
-			index++;
-		start = index;
-		while (s[index] && s[index] != c)
-			index++;
-		if (index > start)
-			splitted[splitted_index++] = ft_strndup(start, index, s);
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > j)
+		{
+			tab[k] = ft_strndup(s + j, i - j);
+			k++;
+		}
 	}
-	splitted[splitted_index] = NULL;
-	return (splitted);
+	tab[k] = NULL;
+	return (tab);
 }
